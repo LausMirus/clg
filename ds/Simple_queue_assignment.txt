@@ -1,0 +1,59 @@
+1. Queue & FIFO Principle
+
+· Queue: Linear data structure following FIFO (First In First Out)
+· Example: Ticket counter - first person in line gets served first
+
+2. Array Representation
+
+· Queue stored in array with front pointing to first element, rear pointing to last element
+
+3. Purpose of front and rear
+
+· front: Index of first element (deletion end)
+· rear: Index of last element (insertion end)
+
+4. Conditions
+
+· (a) Full: rear == size - 1
+· (b) Empty: front == -1 or front > rear
+
+5. Overflow & Underflow
+
+· Overflow: Insert when queue is full → occurs during Enqueue
+· Underflow: Delete when queue is empty → occurs during Dequeue
+
+6. Dequeue vs Peek
+
+· Dequeue: Removes and returns front element
+· Peek: Only returns front element (doesn't remove)
+
+7. Limitation
+
+· Wasted space: Cannot reuse positions after deletion (non-circular array)
+
+8. Operations with front & rear values
+
+Operation front rear
+Initial -1 -1
+Enqueue(10) 0 0
+Enqueue(20) 0 1
+Enqueue(30) 0 2
+Dequeue() 1 2
+Enqueue(40) 1 3
+Enqueue(50) 1 4
+
+9. Queue: 15, 25, 35, 45
+
+· (a) Peek: 15
+· (b) Dequeue removes: 15
+· (c) New front: 25
+· (d) Rear element: 45
+
+10. Sequence Prediction
+
+```
+Enqueue(5)  → [5]
+Enqueue(10) → [5,10]
+Enqueue(15) → [5,10,15]
+Dequeue()   → removes 5, queue: [10,15]
+Peek()      → returns 10
